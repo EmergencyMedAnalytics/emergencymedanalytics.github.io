@@ -134,3 +134,15 @@ ul.no-bullets {
   padding: 0; /* Remove padding */
   margin: 0; /* Remove margins */
 }
+
+table, th, td {
+  width: 100%;
+  text-align: center;
+  padding: 100px;
+  border: 0 px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: center;
+}
