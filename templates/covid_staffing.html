@@ -6,18 +6,151 @@
     <br> 
     <h1>COVID Staffing</h1>
     
-    <br> Lorem ipsum dolor sit amet, <a href='covid_staffing.html'>COVID Staffing</a> consectetur adipiscing elit. Proin non faucibus magna, vel tempus dui. Pellentesque quis leo eget augue lacinia aliquet. Aliquam erat volutpat. Nulla ornare magna eget dui eleifend hendrerit. Mauris a euismod nulla. Aliquam nec est iaculis, consectetur neque eget, aliquet arcu. Donec faucibus purus mollis elit sagittis, id blandit sapien ornare.<br><br>   
+    <p style="text-align:justify;">
+    	As the threat of ongoing surges of COVID-19 in U.S. continues, a variety of interventions will be required to meet the demand for critical care resources. To determine the ability to meet these demands, we explored the intersection of critical care bed (CCB) capacity and staffing availability in U.S. counties.
+    </p>
 
-    <iframe 
+	<br><br> 
+
+    <h4 style="text-align:justify;"><u>Objectives</u></h4>
+
+    <p style="text-align:justify;">
+    	The model described here aims to provide decision support to stakeholders attempting to minimise the unmet demand for COVID-19 critical care. Optimal reallocation of nurses and physicians within their current state of employement and within 250 miles of the border of the county of employment was estimated. Active constraints (critical care beds, nurse staffing, and/or physician staffing), along with slack or excess for each resource was also identified.
+    </p> 
+	<br>
+	<h4 style="text-align:justify;"><u>Assumptions</u></h4>
+	<br>
+	<h5 style="text-align:justify;"><u>Critical Care Demand</u> <sup>1-5</sup></h5>
+	<p style="text-align:justify;"> 
+		Demand for critical care beds, as well as projected COVID-19 cases, for US counties were estimated using an adaptive meta-population SEIR model published previously. The estimates are updated regularly and provide projects for up to six weeks from the date of the date of publication.<sup>5</sup> For the purposes of this model and planning tool, two week projections are used. 
+	</p>
+	<br>
+	<h5 style="text-align:justify;"><u>Occupancy</u> <sup>6</sup></h5>
+	
+	<p style="text-align:justify;">
+		ICU occupancy was estimated using the CMS Medicare Hospital Cost Report. 
+	</p>
+	
+	Total number of ICU patient days / 365 <br>
+	Occupied beds remain occupied <br>
+	Remaining beds available for COVID-19 patients
+
+	<br><br>   
+	<h5 style="text-align:justify;"><u>Beds</u> <sup>5,7</sup></h5>
+	
+	<p style="text-align:justify;">
+	Critical care beds (CCBs) were calculated using: 
+	</p>
+
+	<ul style="text-align:justify;">
+		<li><span>&#9679 Intensive care unit (ICU) beds</span></li>
+		<li><span>&#9679 Operating room (OR) beds (1 bed: 1 OR)</span></li>
+		<li><span>&#9679 Post-anesthesia care unit (PACU) beds (1.5 PACU beds: 1 OR)</span></li>
+		<li><span>&#9679 Step-down beds (1 step-down bed: 4 ICU beds)</span></li>
+		<li><span>&#9679 Long-term acute care (LTAC) beds.</span></li>
+	</ul>
+
+	<p style="text-align:justify;">
+		CCB counts were summed at the county level for all US civilian hospitals including long-term acute care facilities. The highest, reasonable ICU bed count reported by each hospital was used. 
+	</p>
+
+	<h5 style="text-align:justify;"><u>Four Surge Scenarios</u> <sup>8-13</sup></h5>
+
+	<table>
+	  <tr>
+	    <th>Scenario</th>
+	    <th>Baseline (Conventional)</th>
+	    <th>Moderate</th>
+	    <th>Contingency</th>
+	    <th>Crisis</th>
+	  </tr>
+	  <tr>
+	    <th>Critical Care Beds</th>
+	    <td>All hospital ICU beds except NICU</td>
+	    <td>All hospital ICU beds except NICU</td>
+	    <td>All hospital ICU beds except NICU</td>
+	    <td>All hospital ICU beds except NICU + OR, PACU, & LTAC</td>
+	  </tr> 	
+	  <tr>
+	    <th>Nursing Ratios</th>
+	    <td>2 Critical care beds / nurse</td>
+	    <td>3 Critical care beds / nurse</td>
+	    <td>5 Critical care beds / nurse</td>
+	    <td>6 Critical care beds / nurse</td>
+	  </tr> 	
+	  <tr>
+	    <th>Nursing Staffing</th>
+	    <td>15% of full-time RNs + 15% of part-time RNs</td>
+	    <td>15% of full-time RNs + 15% of part-time RNs</td>
+	    <td>15% of full-time RNs + 15% of part-time RNs</td>
+	    <td>15% of full-time RNs + 15% of part-time RNs</td>
+	  </tr> 
+	  <tr>
+	    <th>Physician Ratios</th>
+	    <td>7 Critical care beds / intensivist</td>
+	    <td>10 Critical care beds / physician <sup>*</sup></td>
+	    <td>12 Critical care beds / physician <sup>*</sup></td>
+	    <td>12 Critical care beds / physician <sup>*</sup></td>
+	  </tr> 
+	  
+	  <tr>
+	    <th>Physician Staffing<sup>a</sup></th>
+	    <td>100% of Intensivists</td>
+	    <td>100% of Intensivists + 45% of Medical/Surgical Specialists<sup>**</sup></td>
+	    <td>100% of Intensivists + 45% of Medical/Surgical Specialists<sup>**</sup></td>
+	    <td>100% of Intensivists + 45% of Medical/Surgical Specialists<sup>**</sup></td>
+	  </tr> 
+
+	  <tr>
+	    <th>Advanced Practice Practitioners<sup>a</sup></th>
+	    <td>12% of Nurse Practitioners + 1.4% of Physician Assistants + 50% of Certified Registered Nurse Anesthetists</td>
+	    <td>12% of Nurse Practitioners + 1.4% of Physician Assistants + 50% of Certified Registered Nurse Anesthetists</td>
+	    <td>12% of Nurse Practitioners + 1.4% of Physician Assistants + 50% of Certified Registered Nurse Anesthetists</td>
+	    <td>12% of Nurse Practitioners + 1.4% of Physician Assistants + 50% of Certified Registered Nurse Anesthetists</td>
+	  </tr> 
+
+	</table>
+	<p style="text-align:justify;">
+		<small><sup>*</sup>Advanced Practice Practitioners (APP) count as physician extenders with each APP counting as 0.5 physicians</small>
+	<br>
+		<small><sup>**</sup>Counts include 30% of Cardiovascular disease, gastroenterology, geriatrics, internal medicine, infectious disease, interventional cardiology, nephrology, neurology, pediatric cardiology, pediatrics, pulmonology, urology, surgeons, and anesthesiologists</small>
+	</p>
+	<br>
+
+	<h4 style="text-align:justify;"><u>Model</u></h4>
+	
+	<p align="left">
+		A single linear optimization model was developed and solved using the revised simplex method. It aims to minimise unmet demand for COVID-19 critical care through an optimal combination of (i) redistribution of nurses and physicians within each state (limited to a maximum distance of 250 miles) and (ii) provision of additional emergency CCB capacity and critical care staff. This model can provide decision support to stakeholders by directly suggesting the optimal interventions.
+	</p>
+
+	<img src="img/covid_staffing_formula.png" alt="COVID STAFFING FORMULA">
+
+	<br><br><br>
+	<h1>COVID Staffing</h1>
+	<iframe 
     	id="inlineFrameExample"
 	    title="Inline Frame Example"
 	    width=100%
-	    height="700"
+	    height="500"
 	    frameBorder="0"
 	    src="https://mountsinaigeospatial.github.io/data/project/covid_staffing_2020_11_29_pred_2020_12_14/">
-	</iframe><br> <br> 
-
-	<p>Mauris purus neque, vulputate ut neque nec, tempus tincidunt est. Fusce consequat nisl at velit ultricies, sit amet porta dolor tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur ac quam posuere, scelerisque dui eu, tempor nulla. Curabitur elit velit, consectetur eu facilisis quis, volutpat at erat. Nulla dapibus elit sit amet risus euismod, molestie placerat lacus imperdiet. Etiam pretium enim venenatis finibus eleifend. </p>
+	</iframe>
+	<br><br><br>
+    
+	<p align="left">1. Pei S, Kandula S, Shaman J. Differential effects of intervention timing on COVID-19 spread in the United States. <i>Sci Adv.</i> 2020.<br> 
+	2.	Pei S, Shaman J. Initial simulation of SARS-CoV-2 spread and intervention effects in the continental US. <i>medRxiv</i>. 2020;40303.<br> 
+	3.	Pei S, Shaman J. Simulation of SARS-Cov2 spread and intervention effects in the continental US with variable contact rates, March 24, 2020. In: <a href="https://github.com/shaman-lab/COVID-19Projection_0324" target='_blank'>https://github.com/shaman-lab/COVID-19Projection_0324</a>; 2020.<br> 
+	4.	Yamana T, Pei S, Kandula S, Shaman J. Projection of COVID-19 cases and deaths in the US as individual states re-open May 4, 2020. <i>medRxiv</i>. 2020;Preprint.<br> 
+	5.	Zebrowski A, Rundle A, Pei S, et al. A spatiotemporal tool to project hospital critical care capacity and mortality from COVID-19 in US counties. <i>Am J Public Health.</i> 2021;In Press.<br> 
+	6.	Luo E, Erikson C, Chen C, et al. State Hospital Workforce Deficit Esimator. Fitzhugh Mullan Institute for Health Workforce Equity, The George Washington University. <a href="https://www.gwhwi.org/estimator.html" target='_blank'>https://www.gwhwi.org/estimator.html</a>. Published 2020. Updated December 11, 2020. Accessed July 15, 2020.<br> 
+	7.	Marcon E, Kharraja S, Smolski N, Luquet B, Viale JP. Determining the number of beds in the postanesthesia care unit: a computer simulation flow approach. <i>Anesth Analg.</i> 2003;96(5):1415-1423, table of contents.<br> 
+	8.	Kleinpell RM. ICU workforce: revisiting nurse staffing. <i>Crit Care Med. </i>2014;42(5):1291-1292.<br> 
+	9.	Kleinpell RM, Grabenkort WR, Kapu AN, Constantine R, Sicoutris C. Nurse Practitioners and Physician Assistants in Acute and Critical Care: A Concise Review of the Literature and Data 2008-2018. <i>Crit Care Med. </i>2019;47(10):1442-1449.<br> 
+	10.	Dara SI, Afessa B. Intensivist-to-bed ratio: association with outcomes in the medical ICU. <i>Chest.</i> 2005;128(2):567-572.<br> 
+	11.	Spetz J. There Are Not Nearly Enough Nurses to Handle the Surge of Coronavirus Patients: Here's How to Close the Gap Quickly. In: <i>Affairs H, ed. Health Affairs Blog.</i> Vol 20202020.<br> 
+	12.	American Association of Nurse Anesthetists. CRNAs Asked to Assume Critical Care Responsibilities During the COVID-19 Pandemic. <a href="https://www.aana.com/docs/default-source/practice-aana-com-web-documents-(all)/crnas_asked_to_assume_critical_care_responsibilities_during_the_covid_19_pandemic.pdf?sfvrsn=ea3630e7_6" target="_blank">https://www.aana.com/docs/default-source/practice-aana-com-web-documents-(all)/crnas_asked_to_assume_critical_care_responsibilities_during_the_covid_19_pandemic.pdf?sfvrsn=ea3630e7_6</a>. Published 2020. Accessed October 21, 2020.<br> 
+	13.	Association of American Medical Colleges. <i>Percentage Change in the Number of Active Physicians by Specialty, 2012-17.</i> Washington, DC2020.<br> 
+	</p>
 
   </div>
 </div>
